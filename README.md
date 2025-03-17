@@ -14,7 +14,7 @@
  ```bash
  pip install pandas torch transformers esm huggingface_hub
 ```
- Usage:
+ ##### Usage:
  `python pdac_pred_llm.py <filepath> [--separator <separator>] [--columns <col1> <col2> ...]`
 
  * `<filepath>`: Path to the input file.
