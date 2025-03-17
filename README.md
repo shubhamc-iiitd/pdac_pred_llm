@@ -21,7 +21,7 @@
  * `--separator or -s`: Separator used in the input file (default: ',').
  * `--columns or -c`: Ordered list of column names for prediction (default: ENSG00000204287 ENSG00000104894 ENSG00000081059 ENSG00000171345 ENSG00000265972).
 
- Description:
+ #### Description:
  The script performs the following steps:
  1. Input Data Validation: Reads the input file using pandas, allowing the user to specify the separator.
  2. Probability Prediction: Uses pre-trained Linear Regression (LR) models (pickled files named <column_name>_5.pkl) located in the same directory as the script to predict probabilities for each specified column. The order of columns is respected.
@@ -32,15 +32,15 @@
     * Classifies the generated peptide sequences using the ESM2 model.
     * Prints the predicted class and probability for each sequence.
 
- Model Directory:
+ #### Model Directory:
  The script assumes that the pickled LR models (<column_name>_5.pkl) are located in the same directory as the Python script.
 
- Example:
+ #### Example:
  `python pdac_pred_llm.py data.csv --separator "\t" --columns gene1 gene2 gene3 gene4 gene5`
 
  This command will read data.csv, using tab as the separator, and use the columns gene1, gene2, gene3, gene4, and gene5 in that specific order.
 
- Code Structure:
+ ####  Code Structure:
  * ```validate_file(filepath, separator)```: Validates the input file.
  * ```predict_probabilities(df, model_dir, ordered_cols)```: Predicts probabilities using LR models.
  * ```probability_to_amino_acid(probability)```: Converts probability to amino acid.
