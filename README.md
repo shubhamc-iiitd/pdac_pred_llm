@@ -1,4 +1,4 @@
-# Protein Sequence Prediction and Classification CLI
+# Classification of Pancreatic Ductal Carcinoma Patients using a Large Language model
 
 ### This Python script provides a command-line interface (CLI) for predicting PDAC patients based on the expression of a 5-gene biomarker using a fine-tuned ESM2 model.
 
