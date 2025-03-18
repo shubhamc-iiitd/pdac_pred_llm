@@ -7,24 +7,23 @@
  * scikit-learn == 1.6.1
  * pandas
  * torch
- * transformers
- * esm
- * huggingface_hub
+ * json
+ * esm == 2.0.0
+ * huggingface_hub == 0.29.3
 
  You can install the required packages using pip:
  ```bash
- pip install pandas torch transformers esm huggingface_hub
+ pip install pandas torch transformers esm huggingface_hub scikit
 ```
  #### Usage:
- `python pdac_pred_llm.py <filepath> [--separator <separator>] [--columns <col1> <col2> ...]`
-
+ `python pdac_pred_llm.py <filepath> [--separator <separator>] [--output <output filepath>]`
  * `<filepath>`: Path to the input file.
  * `--separator or -s`: Separator used in the input file (default: ',').
- * `--columns or -c`: Ordered list of column names for prediction (default: ENSG00000204287 ENSG00000104894 ENSG00000081059 ENSG00000171345 ENSG00000265972).
+ * `--output or -o`: Path to the output file.
 
  #### Description:
  The script performs the following steps:
- 1. Input Data Validation: Reads the input file using pandas, allowing the user to specify the separator.
+ 1. Input Data Validation: Reads the input gene expression (in TPM) file using pandas, allowing the user to specify the separator.
  2. Probability Prediction: Uses pre-trained Linear Regression (LR) models (pickled files named <column_name>_5.pkl) located in the same directory as the script to predict probabilities for each specified column. The order of columns is respected.
  3. Amino Acid Conversion: Converts the predicted probabilities to amino acids based on predefined ranges.
  4. Peptide Sequence Generation: Concatenates the amino acids for each row into a peptide sequence.
@@ -37,7 +36,7 @@
  The script assumes that the pickled LR models (<column_name>_5.pkl) are located in the same directory as the Python script.
 
  #### Example:
- `python pdac_pred_llm.py data.csv --separator "\t" --columns gene1 gene2 gene3 gene4 gene5`
+ `python pdac_pred_llm.py data.csv --separator "\t" --output results/output.csv`
 
  This command will read data.csv, using tab as the separator, and use the columns gene1, gene2, gene3, gene4, and gene5 in that specific order.
 
