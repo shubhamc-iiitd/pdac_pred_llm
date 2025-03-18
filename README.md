@@ -16,7 +16,7 @@
  pip install pandas torch transformers esm huggingface_hub scikit
 ```
  #### Usage:
- `python pdac_pred_llm.py <filepath> [--separator <separator>] [--output <output filepath>]`
+ `python standalone.py <filepath> [--separator <separator>] [--output <output filepath>]`
  * `<filepath>`: Path to the input file.
  * `--separator or -s`: Separator used in the input file (default: ',').
  * `--output or -o`: Path to the output file.
@@ -36,7 +36,7 @@
  The script assumes that the pickled LR models (<column_name>_5.pkl) are located in the same directory as the Python script.
 
  #### Example:
- `python pdac_pred_llm.py data.csv --separator "\t" --output results/output.csv`
+ `python standalone.py data.csv --separator "\t" --output results/output.csv`
 
  This command will read data.csv, using tab as the separator, and use the columns gene1, gene2, gene3, gene4, and gene5 in that specific order.
 
