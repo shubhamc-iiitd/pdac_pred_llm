@@ -3,7 +3,8 @@
 ### This Python script provides a command-line interface (CLI) for predicting PDAC patients based on the expression of a 5-gene biomarker using a fine-tuned ESM2 model.
 
  Prerequisites:
- * Python 3.12 or later
+ * Python (>=3.9)
+ * scikit-learn == 1.6.1
  * pandas
  * torch
  * transformers
