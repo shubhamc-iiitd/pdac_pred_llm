@@ -6,14 +6,14 @@
  * Python (>=3.9)
  * scikit-learn == 1.6.1
  * pandas
- * torch
+ * torch == 2.5.1
  * json
  * esm == 2.0.0
  * huggingface_hub == 0.29.3
 
  You can install the required packages using pip:
  ```bash
- pip install pandas torch transformers esm huggingface_hub scikit
+ pip install pandas torch==2.5.1 esm==2.0.0 huggingface_hub==0.29.3 scikit-learn==1.6.1
 ```
  #### Usage:
  `python standalone.py <filepath> [--separator <separator>] [--output <output filepath>]`
